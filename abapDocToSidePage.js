@@ -1,4 +1,6 @@
 const fsFacadeDefiner = require('./fsFacad');
 
-let fsFacade = new fsFacadeDefiner('$test_trpa_impairment');
-fsFacade.writeObjectToFile('./sidePage.json');
+
+let fsFacade = new fsFacadeDefiner(process.argv[process.argv.length - 2]);
+fsFacade.writeObjectToFile(process.argv[process.argv.length - 1]);
+
