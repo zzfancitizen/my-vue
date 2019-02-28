@@ -12,10 +12,10 @@ class fsFacade {
     _getAllObjects(folderPath) {
         let files = fs.readdirSync(folderPath, {encoding: utf8, withFileTypes: true});
         files.forEach((file) => {
-            let filedir = path.join(folderPath, file);
-            let info = fs.statSync(filedir);
+            let fileDir = path.join(folderPath, file);
+            let info = fs.statSync(fileDir);
             if (info.isDirectory()) {
-                this._getAllObjects(filedir)
+                this._getAllObjects(fileDir)
             } else {
                 this.files.push(file)
             }
